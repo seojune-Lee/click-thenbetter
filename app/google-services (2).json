@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "423026195053",
+    "firebase_url": "https://clickthenbetter.firebaseio.com",
+    "project_id": "clickthenbetter",
+    "storage_bucket": "clickthenbetter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423026195053:android:8eeb63e3c33147bf7a5d64",
+        "android_client_info": {
+          "package_name": "com.example.clickthenbetter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "423026195053-9appgo7vito88q62pmu779s45uplvbv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANF-vwCtjVEoigOChBzirkQp8gdp5hjfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "423026195053-9appgo7vito88q62pmu779s45uplvbv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
