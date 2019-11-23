@@ -3,6 +3,7 @@ package com.example.clickthenbetter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -19,17 +20,22 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
+import javax.annotation.CheckForNull;
+
 class User {
 
-    public String username;
+    public ArrayList<Integer> Icon;
     public String email;
+
 
     public User() {
 
     }
 
-    public User(String username, String email) {
-        this.username = username;
+    public User( String email) {
+        Icon=new ArrayList<>();
         this.email = email;
     }
 
@@ -42,6 +48,12 @@ public class signUpActivity extends AppCompatActivity{
     private RadioGroup color_group;
     private FirebaseDatabase  fdb = FirebaseDatabase.getInstance();
     private DatabaseReference daRef = fdb.getReference();
+    CheckBox cb1,cb2,cb3,cb4;
+    ArrayList<CheckBox> chArr=new ArrayList<>();
+
+    String email;
+    String password;
+    String passwordCheck;
 
     private RadioButton u_rb1, u_rb2, u_rb3, d_rb1, d_rb2, d_rb3, c_rb1, c_rb2;
 
@@ -52,18 +64,16 @@ public class signUpActivity extends AppCompatActivity{
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();//초기화 문장==> 회원가입을 위한
 
-        upper_group = findViewById(R.id.rg1);
-        down_group = findViewById(R.id.rg2);
-        color_group = findViewById(R.id.rg3);
 
-        u_rb1 = findViewById(R.id.rb1);
-        u_rb2 = findViewById(R.id.rb2);
-        u_rb3 = findViewById(R.id.rb3);
-        d_rb1 = findViewById(R.id.rb4);
-        d_rb2 = findViewById(R.id.rb5);
-        d_rb3 = findViewById(R.id.rb6);
-        c_rb1 = findViewById(R.id.rb7);
-        c_rb2 = findViewById(R.id.rb8);
+        cb1=findViewById(R.id.re1);
+        cb2=findViewById(R.id.re2);
+        cb3=findViewById(R.id.re3);
+        cb4=findViewById(R.id.re4);
+
+        chArr.add(cb1);
+        chArr.add(cb2);
+        chArr.add(cb3);
+        chArr.add(cb4);
 
         findViewById(R.id.signupButton).setOnClickListener(onClickListener);
     }
@@ -75,19 +85,27 @@ public class signUpActivity extends AppCompatActivity{
             switch(v.getId()){
 
                 case R.id.signupButton:
-                    writeNewUser("1234","NEW","newnewenw@naver.com");
+
+
                     signUp();
+                    writeNewUser("","",email);
                     setOption();
                     break;
+
             }
         }
     };
 
+    private void checkB(){
+
+    }
+
     private void signUp(){
-        String email = ((EditText)findViewById(R.id.EmaileditText)).getText().toString();
-        String password = ((EditText)findViewById(R.id.passwordeditText)).getText().toString();
+
+        email = ((EditText)findViewById(R.id.EmaileditText)).getText().toString();
+        password = ((EditText)findViewById(R.id.passwordeditText)).getText().toString();
         //일반뷰는 gettext를 사용 못한다 에딧텍스트만 사용
-        String passwordCheck = ((EditText)findViewById(R.id.passwordcheckeditText)).getText().toString();
+        passwordCheck = ((EditText)findViewById(R.id.passwordcheckeditText)).getText().toString();
 
         if(email.length() > 0 && password.length() > 0 && passwordCheck.length() >0){
             if(password.equals(passwordCheck)) {
@@ -129,8 +147,15 @@ public class signUpActivity extends AppCompatActivity{
         startActivity(intent);
     }
     private void writeNewUser(String userId, String name, String email) {
-        User user = new User(name, email);
-        daRef.child("users").child(userId).setValue(user);
+        User user = new User(email);
+        for(int i=0;i<chArr.size();i++) {
+            if (chArr.get(i).isChecked()) {
+                user.Icon.add(1);
+            }else{
+                user.Icon.add(0);
+            }
+        }
+        daRef.child("USER").child(email).setValue(user);
     }
     private void setOption(){
         int upper = 0;
