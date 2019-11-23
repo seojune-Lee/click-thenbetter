@@ -3,6 +3,7 @@ package com.example.clickthenbetter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -50,11 +51,12 @@ public class signUpActivity extends AppCompatActivity{
     private DatabaseReference daRef = fdb.getReference();
     CheckBox cb1,cb2,cb3,cb4;
     ArrayList<CheckBox> chArr=new ArrayList<>();
+    Button btnAdd;
 
     String email;
     String password;
     String passwordCheck;
-
+    String reT;
     private RadioButton u_rb1, u_rb2, u_rb3, d_rb1, d_rb2, d_rb3, c_rb1, c_rb2;
 
     @Override
@@ -63,6 +65,7 @@ public class signUpActivity extends AppCompatActivity{
         setContentView(R.layout.activity_signup);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();//초기화 문장==> 회원가입을 위한
+        btnAdd=findViewById(R.id.btn_add);
 
 
         cb1=findViewById(R.id.re1);
@@ -70,13 +73,23 @@ public class signUpActivity extends AppCompatActivity{
         cb3=findViewById(R.id.re3);
         cb4=findViewById(R.id.re4);
 
+
+
         chArr.add(cb1);
         chArr.add(cb2);
         chArr.add(cb3);
         chArr.add(cb4);
 
         findViewById(R.id.signupButton).setOnClickListener(onClickListener);
+
+//        if(cb4.isChecked()){
+//            String addedText=((EditText)findViewById(R.id.EmaileditText)).getText().toString();
+//            cb1.setChecked(false);
+//            cb2.setChecked(false);
+//            cb3.setChecked(false);
+//        }
     }
+
 
     View.OnClickListener onClickListener = new View.OnClickListener(){
         @Override

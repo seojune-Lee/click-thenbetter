@@ -69,11 +69,11 @@ class MainActivity : AppCompatActivity(), LocationListener{
 
         val RefList = ArrayList<StorageReference>()
 
-        RefList.add(storageRef.child("10000.bmp"))
-        RefList.add(storageRef.child("10001.bmp"))
-        RefList.add(storageRef.child("10007.bmp"))
-        RefList.add(storageRef.child("10006.bmp"))
-        RefList.add(storageRef.child("KakaoTalk_20191107_110103496.jpg"))
+        RefList.add(storageRef.child("49662.bmp"))
+        RefList.add(storageRef.child("49488.bmp"))
+        RefList.add(storageRef.child("49399.bmp"))
+        RefList.add(storageRef.child("40490.bmp"))
+        RefList.add(storageRef.child("39985.bmp"))
 
         val ONE_MEGABYTE = (1024 * 1024).toLong()
 
