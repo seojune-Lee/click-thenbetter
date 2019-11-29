@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -13,108 +14,303 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:gravity="center"
-            android:text="Main Page"
-            android:textColor="#17011A"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_height="66dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:gravity="center"
+                android:textColor="#17011A"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="165dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/position" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="10dp"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/LocText"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="팔달구"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
+                android:layout_height="130dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/weather_now"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@android:color/transparent" />
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_gravity="center" />
 
                 <TextView
-                    android:id="@+id/now_temp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:gravity="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:id="@+id/textView9"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
 
-            <TextView
-                android:id="@+id/tempss"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/now_temp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="6°"
+                        android:textSize="45sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tempss"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="8 / 4  "
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_weight="1" />
+                android:layout_height="10dp" />
 
         </LinearLayout>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="220dp">
+            android:layout_height="340dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/firstImage"
-                    android:layout_width="200dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/xml_border"
-                    android:scaleType="centerInside" />
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="310dp"
+                    android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/secondImage"
-                    android:layout_width="200dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/xml_border"
-                    android:scaleType="centerInside" />
+                    <ImageButton
+                        android:id="@+id/firstImage"
+                        android:layout_width="300dp"
+                        android:layout_height="290dp"
+                        android:background="?attr/actionBarItemBackground"
+                        android:scaleType="centerInside" />
 
-                <ImageButton
-                    android:id="@+id/thirdImage"
-                    android:layout_width="200dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/xml_border"
-                    android:scaleType="centerInside" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/fourthImage"
-                    android:layout_width="200dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/xml_border"
-                    android:scaleType="centerInside" />
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="20dp"
+                            android:layout_height="10dp" />
 
-                <ImageButton
-                    android:id="@+id/fifthImage"
-                    android:layout_width="200dp"
-                    android:layout_height="190dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/xml_border"
-                    android:scaleType="centerInside" />
+                        <ImageView
+                            android:id="@+id/imageView20"
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            app:srcCompat="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/like1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="  2973" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="310dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/secondImage"
+                        android:layout_width="300dp"
+                        android:layout_height="290dp"
+                        android:background="?attr/actionBarItemBackground"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="20dp"
+                            android:layout_height="10dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView21"
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            app:srcCompat="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/like2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="  235" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="310dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/thirdImage"
+                        android:layout_width="300dp"
+                        android:layout_height="290dp"
+                        android:background="?attr/actionBarItemBackground"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="20dp"
+                            android:layout_height="10dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView22"
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            app:srcCompat="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/like3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="  224" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="310dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/fourthImage"
+                        android:layout_width="300dp"
+                        android:layout_height="290dp"
+                        android:background="?attr/actionBarItemBackground"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="20dp"
+                            android:layout_height="10dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView23"
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            app:srcCompat="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/like4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="  49" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="310dp"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/fifthImage"
+                        android:layout_width="300dp"
+                        android:layout_height="290dp"
+                        android:background="?attr/actionBarItemBackground"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="20dp"
+                            android:layout_height="10dp" />
+
+                        <ImageView
+                            android:id="@+id/imageView24"
+                            android:layout_width="20dp"
+                            android:layout_height="17dp"
+                            app:srcCompat="@drawable/like" />
+
+                        <TextView
+                            android:id="@+id/like5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="  131" />
+                    </LinearLayout>
+                </LinearLayout>
+
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -128,6 +324,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?attr/actionBarItemBackground"
                 android:text="Reset" />
 
             <Button
@@ -135,6 +332,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="?attr/actionBarItemBackground"
                 android:text="Option" />
 
         </LinearLayout>
@@ -143,8 +341,8 @@
             android:id="@+id/Logoutbutton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
             android:text="Logout"
+            android:background="?attr/actionBarItemBackground"
             android:textColor="@android:color/holo_red_dark" />
 
     </LinearLayout>

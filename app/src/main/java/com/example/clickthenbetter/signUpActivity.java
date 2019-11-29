@@ -29,15 +29,17 @@ class User {
 
     public ArrayList<Integer> Icon;
     public String email;
+    public String addT;
 
 
     public User() {
 
     }
 
-    public User( String email) {
+    public User( String email,String addT) {
         Icon=new ArrayList<>();
         this.email = email;
+        this.addT=addT;
     }
 
 }
@@ -49,15 +51,16 @@ public class signUpActivity extends AppCompatActivity{
     private RadioGroup color_group;
     private FirebaseDatabase  fdb = FirebaseDatabase.getInstance();
     private DatabaseReference daRef = fdb.getReference();
+    String addedText;
     CheckBox cb1,cb2,cb3,cb4;
     ArrayList<CheckBox> chArr=new ArrayList<>();
     Button btnAdd;
 
-    String email;
-    String password;
-    String passwordCheck;
+    //int c1=0,c2=0,c3=0,c4=0;
+
+
     String reT;
-    private RadioButton u_rb1, u_rb2, u_rb3, d_rb1, d_rb2, d_rb3, c_rb1, c_rb2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +75,47 @@ public class signUpActivity extends AppCompatActivity{
         cb2=findViewById(R.id.re2);
         cb3=findViewById(R.id.re3);
         cb4=findViewById(R.id.re4);
+//
+//        cb2.setOnClickListener(new CheckBox.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                c2=1;
+//            }
+//        });
+//        cb3.setOnClickListener(new CheckBox.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                c3=1;
+//            }
+//        });
+//
+//        cb4.setOnClickListener(new CheckBox.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                c4=1;
+//            }
+//        });
+//
+//        cb1.setOnClickListener(new CheckBox.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                c1=1;
+//            }
+//        });
 
 
 
         chArr.add(cb1);
         chArr.add(cb2);
         chArr.add(cb3);
-        chArr.add(cb4);
+
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addedText=((EditText)findViewById(R.id.EmaileditText)).getText().toString();
+            }
+        });
 
         findViewById(R.id.signupButton).setOnClickListener(onClickListener);
 
@@ -101,7 +138,7 @@ public class signUpActivity extends AppCompatActivity{
 
 
                     signUp();
-                    writeNewUser("","",email);
+
                     setOption();
                     break;
 
@@ -115,10 +152,10 @@ public class signUpActivity extends AppCompatActivity{
 
     private void signUp(){
 
-        email = ((EditText)findViewById(R.id.EmaileditText)).getText().toString();
-        password = ((EditText)findViewById(R.id.passwordeditText)).getText().toString();
+        final String email = ((EditText)findViewById(R.id.EmaileditText)).getText().toString();
+        final String password = ((EditText)findViewById(R.id.passwordeditText)).getText().toString();
         //일반뷰는 gettext를 사용 못한다 에딧텍스트만 사용
-        passwordCheck = ((EditText)findViewById(R.id.passwordcheckeditText)).getText().toString();
+        final String passwordCheck = ((EditText)findViewById(R.id.passwordcheckeditText)).getText().toString();
 
         if(email.length() > 0 && password.length() > 0 && passwordCheck.length() >0){
             if(password.equals(passwordCheck)) {
@@ -129,7 +166,7 @@ public class signUpActivity extends AppCompatActivity{
                                 if (task.isSuccessful()) {
                                     startToast("회원가입을 성공했습니다.");
                                     FirebaseUser user = mAuth.getCurrentUser();
-
+                                    writeNewUser("","",email.substring(0,email.length()-4));
                                     startLoginActivity();
                                     // 성공 UI
                                 } else {
@@ -160,7 +197,7 @@ public class signUpActivity extends AppCompatActivity{
         startActivity(intent);
     }
     private void writeNewUser(String userId, String name, String email) {
-        User user = new User(email);
+        User user = new User(email,addedText);
         for(int i=0;i<chArr.size();i++) {
             if (chArr.get(i).isChecked()) {
                 user.Icon.add(1);
