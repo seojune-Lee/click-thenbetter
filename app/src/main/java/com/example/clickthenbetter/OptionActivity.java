@@ -3,6 +3,7 @@ package com.example.clickthenbetter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,15 @@ public class OptionActivity extends AppCompatActivity{
         setContentView(R.layout.activity_option);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+
+        Button btn=findViewById(R.id.applyButton);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startMyActivity(RecommendActivity.class);
+            }
+        });
 
     }
 

@@ -135,11 +135,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="199dp"
-                android:layout_marginBottom="249dp"
-                android:text="2급 '관심'"
+                android:layout_marginStart="155dp"
+                android:layout_marginBottom="242dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@color/white" />
+                android:textColor="@color/background800" />
 
             <LinearLayout
                 android:id="@+id/layout_dust"
@@ -231,14 +230,16 @@
                 android:id="@+id/comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/risk"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="118dp"
-                android:layout_marginBottom="142dp"
+                android:layout_marginStart="101dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="38dp"
                 android:fontFamily="@font/alexandria"
-                android:text='"기침과 재채기를 할 때에는      반드시 휴지나 손수건으로 가려주시고 충분한 휴식 및 수분을     섭취해주세요."'
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/white_70" />
+                android:text='"선택한 질병의 금일 위험도에  따른 행동요령을 알려드립니다"'
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorAccent" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -250,27 +251,93 @@
                 android:layout_marginBottom="287dp"
                 android:text="질병위험도"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/white_56" />
+                android:textColor="@color/background900" />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:id="@+id/d1"
+                android:layout_width="82dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="258dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="getColdInfo"
+                android:text="감기"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/d4"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="161dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="getAshInfo"
+                android:text="천식"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/d5"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="325dp"
+                android:layout_marginRight="325dp"
+                android:layout_marginBottom="113dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="getSkinInfo"
+                android:text="피부병"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/d3"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="325dp"
+                android:layout_marginRight="325dp"
+                android:layout_marginBottom="208dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="getFoodInfo"
+                android:text="식중독"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/d2"
+                android:layout_width="82dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="6dp"
-                android:layout_marginBottom="228dp"
-                android:text="Button" />
+                android:layout_marginLeft="6dp"
+                android:layout_marginBottom="64dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="getEyeInfo"
+                android:text="눈병"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:id="@+id/Logoutbutton"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="7dp"
-                android:layout_marginBottom="169dp"
-                android:text="Button" />
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="0dp"
+                android:background="?attr/actionBarItemBackground"
+                android:onClick="logOut"
+                android:text="Logout"
+                android:textColor="@android:color/holo_red_dark" />
 
         </RelativeLayout>
     </LinearLayout>

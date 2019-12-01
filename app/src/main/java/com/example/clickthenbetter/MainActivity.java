@@ -17,6 +17,7 @@ import androidx.core.content.ContextCompat;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         //weatherInfo = new WeatherInfo();
         dustTxt = (TextView)findViewById(R.id.dust);
         house_tem = (TextView)findViewById(R.id.house_tem);
+        mTextViewResult = findViewById(R.id.tem_hum);
+        mQueue = Volley.newRequestQueue(this);
 
 
         final LocationManager lm = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
@@ -48,12 +51,10 @@ public class MainActivity extends AppCompatActivity {
             setLat(location.getLatitude());
         }
 
-        mTextViewResult = findViewById(R.id.tem_hum);
-        mQueue = Volley.newRequestQueue(this);
+
 
         OpenAPIClient openAPIClient = new OpenAPIClient();
         openAPIClient.getCurrentWeather(mTextViewResult,house_tem,mQueue,lon,lat);
-        openAPIClient.getCurrentDust(dustTxt);
 
 
     }
@@ -65,6 +66,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void startRecommend(View view){
         Intent intent = new Intent(this, RecommendActivity.class);
+        startActivity(intent);
+    }
+
+    public void logOut(View view){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
 

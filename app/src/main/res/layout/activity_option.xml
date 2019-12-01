@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
-        android:text="Option"
+        android:text="#Option"
         android:textColor="#17011A"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -180,8 +180,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Blue"
-                android:textColor="@android:color/holo_blue_bright" />
+                android:text="Green"
+                android:textColor="@color/cyan" />
 
             <RadioButton
                 android:id="@+id/orb11"
@@ -207,6 +207,13 @@
         android:layout_height="29dp"
         android:orientation="horizontal">
 
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CheckBox" />
+
         <RadioGroup
             android:id="@+id/org5"
             android:layout_width="match_parent"
@@ -219,8 +226,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:checked="false"
-                android:text="Green"
-                android:textColor="#006400" />
+                android:text="Blue"
+                android:textColor="#1E2FA2" />
 
             <RadioButton
                 android:id="@+id/orb14"
@@ -250,10 +257,54 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView13"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="종류"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBox6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="자켓" />
+
+        <CheckBox
+            android:id="@+id/checkBox5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="코트" />
+
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="청바지" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="치마" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/applyButton"
@@ -263,5 +314,5 @@
         android:gravity="center"
         android:text="적용"
         android:textColor="#F44336" />
-</LinearLayout>
 
+</LinearLayout>
