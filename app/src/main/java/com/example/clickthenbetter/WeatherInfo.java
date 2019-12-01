@@ -5,6 +5,7 @@ public class WeatherInfo {
     private String humid;
     private Double temp_min;
     private Double temp_max;
+    private Double dust = 50.03;
 
     public double getTemp() {
         return temp;
@@ -24,6 +25,14 @@ public class WeatherInfo {
 
     public Double getTemp_min() {
         return temp_min;
+    }
+
+    public Double getDust() {
+        return dust;
+    }
+
+    public void setDust(Double dust) {
+        this.dust = dust;
     }
 
     public void setTemp_min(Double temp_min) {

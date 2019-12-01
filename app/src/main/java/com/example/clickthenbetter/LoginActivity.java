@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 startToast("로그인에 성공했습니다.");
                                 //startmyActivity(RecommendActivity.class);
-                                startmyActivity(MainActivity.class);
+                                startmyActivity(WaitActivity.class);
                             } else {
                                 if(task.getException()!=null)
                                     startToast("email 또는 비밀번호를 확인해주세요.");
