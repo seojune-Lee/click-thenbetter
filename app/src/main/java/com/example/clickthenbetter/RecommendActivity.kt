@@ -75,6 +75,20 @@ class RecommendActivity : AppCompatActivity(), LocationListener{
         RefList.add(storageRef.child("40490.bmp"))
         RefList.add(storageRef.child("265.bmp"))
 
+//        if(oa.checkBox6.isChecked) {
+//
+//            RefList.add(storageRef.child("239.bmp"))
+//            RefList.add(storageRef.child("242.bmp"))
+//            RefList.add(storageRef.child("93.bmp"))
+//            RefList.add(storageRef.child("82.bmp"))
+//            RefList.add(storageRef.child("265.bmp"))
+//        }else {
+//            RefList.add(storageRef.child("39574.bmp"))
+//            RefList.add(storageRef.child("38994.bmp"))
+//            RefList.add(storageRef.child("40261.bmp"))
+//            RefList.add(storageRef.child("49421.bmp"))
+//            RefList.add(storageRef.child("49399.bmp"))
+//        }
         val ONE_MEGABYTE = (1024 * 1024).toLong()
 
         RefList[0].getBytes(ONE_MEGABYTE).addOnSuccessListener { bytes ->

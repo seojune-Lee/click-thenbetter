@@ -323,7 +323,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="?attr/actionBarItemBackground"
-                android:text="Reset" />
+                android:text="RECOMMEND" />
 
             <Button
                 android:id="@+id/Optionbutton"
