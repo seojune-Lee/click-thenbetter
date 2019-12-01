@@ -93,8 +93,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="6°"
-                        android:textSize="45sp"
+                        android:textSize="33sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -102,7 +101,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="8 / 4  "
                         android:textSize="20sp" />
                 </LinearLayout>
 

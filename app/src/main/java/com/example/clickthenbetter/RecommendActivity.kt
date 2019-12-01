@@ -69,11 +69,11 @@ class RecommendActivity : AppCompatActivity(), LocationListener{
 
         val RefList = ArrayList<StorageReference>()
 
-        RefList.add(storageRef.child("49662.bmp"))
-        RefList.add(storageRef.child("49488.bmp"))
-        RefList.add(storageRef.child("49399.bmp"))
+        RefList.add(storageRef.child("239.bmp"))
+        RefList.add(storageRef.child("242.bmp"))
+        RefList.add(storageRef.child("328.bmp"))
         RefList.add(storageRef.child("40490.bmp"))
-        RefList.add(storageRef.child("39985.bmp"))
+        RefList.add(storageRef.child("265.bmp"))
 
         val ONE_MEGABYTE = (1024 * 1024).toLong()
 
@@ -140,7 +140,7 @@ class RecommendActivity : AppCompatActivity(), LocationListener{
                         .into(weather_now)
             }
 
-            this?.main?.temp?.let{now_temp.text = it.toString()+"°C"}
+            this?.main?.temp?.let{now_temp.text = it.toString()}
             this?.main?.tempMax?.let{temp = it.toString()}
             this?.main?.tempMin?.let{tempss.text = temp+"/"+it.toString()}
         }
